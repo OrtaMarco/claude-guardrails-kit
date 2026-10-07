@@ -1,0 +1,43 @@
+{
+  "name": "claude-guardrails-kit",
+  "version": "0.1.0",
+  "description": "Installable, fail-closed hooks for Claude Code: browser allowlist, artifact path gate, notes autocommit, dirty-repo warning and context reminders.",
+  "type": "module",
+  "bin": {
+    "claude-guardrails-kit": "bin/cli.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.es.md",
+    "CHANGELOG.md",
+    "DESIGN.md"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check bin/cli.mjs && node --check src/install.mjs && for f in src/hooks/*.mjs; do node --check $f; done"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "claude-code",
+    "claude",
+    "hooks",
+    "guardrails",
+    "security",
+    "allowlist",
+    "pretooluse",
+    "ai-agents"
+  ],
+  "author": "Marco Orta",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OrtaMarco/claude-guardrails-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OrtaMarco/claude-guardrails-kit/issues"
+  },
+  "homepage": "https://github.com/OrtaMarco/claude-guardrails-kit#readme"
+}
