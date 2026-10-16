@@ -46,6 +46,9 @@ export function initRepo() {
   const dir = tmp("cgk-repo-");
   git(dir, "init", "-q", "-b", "main");
   git(dir, "config", "commit.gpgsign", "false");
+  // El hook commitea con el git del sistema: sin identidad local, en CI no hay autor.
+  git(dir, "config", "user.name", "t");
+  git(dir, "config", "user.email", "t@e.x");
   writeFileSync(join(dir, "a.md"), "hola\n");
   git(dir, "add", "-A");
   git(dir, "commit", "-q", "-m", "init");
